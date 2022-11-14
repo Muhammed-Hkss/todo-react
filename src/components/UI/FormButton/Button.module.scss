@@ -1,0 +1,17 @@
+.formButton{
+  margin-top: 10px;
+  padding: 1rem 10px;
+  width: 64%;
+  border-radius: 6px;
+  background: #5361e0;
+  color: whitesmoke;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+
+
+  &:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

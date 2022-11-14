@@ -1,0 +1,103 @@
+.todo_data{
+    display: grid;
+    align-items: flex-end;
+    width: 90%;
+    margin: 30px auto;
+    height: 292px;
+    background: whitesmoke;
+
+
+    .title_data{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+
+      p{
+        font-size: 10px;
+      }
+    }
+
+    .todo_input_data{
+      display: none;
+
+      &.active{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+
+        .todo_input{
+          width: 90%;
+          padding: 10px;
+          border-radius: 6px;
+          border: 1px solid #E2E1E1;
+          color: #5b5b5b;
+          outline: none;
+        }
+
+        .change_btn{
+          margin-top: 10px;
+          padding: 10px;
+          width: 54%;
+          border-radius: 6px;
+          background: #5361e0;
+          color: whitesmoke;
+          border: none;
+          font-weight: 600;
+          font-size: 14px;
+
+
+
+        }
+      }
+    }
+
+    .button_data{
+      position: relative;
+      display: flex;
+      width: 100%;
+
+
+      .completed_button{
+        background-color: rgb(101, 164, 5);
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border: none;
+
+        .completed_button_icons{
+          border-radius: 50%;
+          background-color: white;
+          color: rgb(101, 164, 5);
+        }
+      }
+
+      .change_button{
+        background-color: blue;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border: none;
+
+        .change_button_icons{
+          color: white;
+        }
+      }
+
+
+      .delete_button{
+        background-color: red;
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border: none;
+
+        .delete_button_icons{
+          color: white;
+        }
+      }
+    } 
+  }

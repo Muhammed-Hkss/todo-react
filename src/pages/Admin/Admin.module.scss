@@ -1,0 +1,77 @@
+.backButton{
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  font-size: 50px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.formContainer{
+  position: relative;
+  width: 40%;
+  margin: auto;  
+  top: 10em;
+  form{
+    width: 85%;
+    height: 350px;
+    background: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .formHeader{
+      h3{
+        font-size: 30px;
+        color: darkblue;
+      }
+    }
+    .formBody{
+      width: 85%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      input{
+        font-size: 18px;
+        padding: 5px;
+        width: 80%;
+        border-radius: 5px;
+        border: 1px solid rgb(117, 117, 122);
+      }
+    }
+    .formFooter{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button{
+        padding: 7px 50px;
+        font-size: 17px;
+        border-radius: 10px;
+        box-shadow: 1px 2px 5px rgb(96, 96, 102);
+        border: 1px solid rgb(107, 108, 112);
+        background: rgb(129, 131, 138);
+        color: whitesmoke;
+        transition: .2s;
+        cursor: pointer;
+        &:hover{
+          background: transparent;
+          color: rgb(119, 119, 128);
+        }
+      }
+    }
+  }
+  .errorRes{
+    display: flex;
+    justify-content: center;
+    color: orangered;
+    font-size: 25px;
+    z-index: 10;
+  }
+
+}
+
