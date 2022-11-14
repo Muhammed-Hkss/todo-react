@@ -49,9 +49,9 @@ const Admin = () => {
         <span className={cls.errorRes}>
           {!validate ? 'required fields': ''}
         </span>
-        <div className={cls.formHeader}>
+        {/* <div className={cls.formHeader}>
           <h3></h3>
-        </div>
+        </div> */}
         <div className={cls.formBody}>
           <input
 						type='text'

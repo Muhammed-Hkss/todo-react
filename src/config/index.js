@@ -11,7 +11,7 @@ export const createTodo = (data ) => instance.post(`todos/create/` , data  , {he
 
 export const getAllTodos = () => instance.get(`todos/` , {headers:{'Authorization': `Token ${localStorage.getItem('userToken')}`}})
 
-export const getSingleTodo = (id) => instance.get(`todos/${id}/` , {headers:{'Authorization': `Bearer ${localStorage.getItem('userToken')}`}})
+// export const getSingleTodo = (id) => instance.get(`todos/${id}/` , {headers:{'Authorization': `Bearer ${localStorage.getItem('userToken')}`}})
 
 export const editTodo = (id, data) => instance.put(`todos/${id}/`, data , {
   headers:{

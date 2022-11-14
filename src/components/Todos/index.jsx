@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { completedTodo, deleteTodo, editTodo, getAllTodos, getSingleTodo } from '../../config'
+import { completedTodo, deleteTodo, editTodo, getAllTodos} from '../../config'
 import cls from './Todos.module.scss'
 import TodoItem from '../TodoItem'
 
@@ -15,7 +15,7 @@ const Todos = () => {
 
 
   
-  
+  console.log(todoBase);
   
   
   React.useEffect(() => {

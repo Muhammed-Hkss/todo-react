@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cls from './TodoItem.module.scss'
 import { AiFillDelete } from 'react-icons/ai'
 import { FaEdit } from 'react-icons/fa'
-import { BiCheck , BiX } from 'react-icons/bi'
+import { BiCheck } from 'react-icons/bi'
 
 
 const TodoItem = ({
