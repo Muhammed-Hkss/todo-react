@@ -1,13 +1,12 @@
 import React from 'react'
 import cls from './Navbar.module.scss'
-import {  Link, useNavigate } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 import { BiMenu } from 'react-icons/bi'
 
 
 
 const Navbar = () => {
   const [open , setOpen] = React.useState(false)
-  const navigate = useNavigate()
 
   const logoutHandler =  (e) => {
 		e.preventDefault()
@@ -75,7 +74,7 @@ const Navbar = () => {
   )
 }
 
-function MobileDropdownItem(props){
+function MobileDropdownItem(){
   return(
     <React.Fragment>
       <div className={cls.MobileDropdownContainer}>

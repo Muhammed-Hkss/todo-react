@@ -5,37 +5,8 @@ import { signIn } from '../../config'
 import { useForm } from 'react-hook-form'
 
 const Login = () => {
-  const [email , setEmail] = React.useState('') 
-  const [password , setPassword] = React.useState('') 
-
-	const [responseErrors, setResponseErrors] = React.useState(false)
-
   const navigate = useNavigate()
-  // const isActive = localStorage.getItem('isActivated')
 
-// front.hkss.10
-  
-
-  // const authHandle =  (e) => {
-  //   e.preventDefault()
-  //   if( email && password ){
-  //     const body = {
-  //       email,
-  //       password,
-  //     }
-  //     console.log(body);
-  //     signIn(body).then(r => {
-  //       // console.log(r);
-  //       if (r.data.accessToken) {
-  //         localStorage.setItem('userToken', r.data.accessToken)
-  //         localStorage.setItem('userId', r.data.user.id)
-	// 				localStorage.setItem('isActivated', r.data.user.isActivated)
-  //         // window.location.reload()
-  //         navigate('/')
-  //       }
-  //     })
-  //   }
-  // }
   
   const {
     register,
@@ -59,14 +30,9 @@ const Login = () => {
 
 
 
-  console.log(responseErrors);
-
   return (
     <div className={cls.authContainer}>
       <form className={cls.register_data} onSubmit={handleSubmit(onSubmit)}>
-        {/* {
-          isActive === 'false' ? <p>1111</p> : <p>2222</p>
-        } */}
 				<div className={cls.formHeader}>
 					<h1 style={{textAlign:'center'}}>Authorization</h1>
 				</div>
@@ -95,7 +61,6 @@ const Login = () => {
 
 
           <div className={cls.password_input_data}>
-            {/* <label>Password</label> */}
             <input
               className={cls.password_input}
 						  type='password'
@@ -120,7 +85,6 @@ const Login = () => {
 
 
 				<div className={cls.formFooter}>
-					{/* <button onClick={(e) => authHandle(e)}>Login</button> */}
 					<button type="submit">Login</button>
 					<Link to='/register'>Create an account</Link>
 				</div>
@@ -130,8 +94,5 @@ const Login = () => {
 }
 
 export default Login
-
-// sdfsdfs@gmail.com
-// asfaff
 
 

@@ -11,5 +11,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-// abdullohsav@gmail.com
-// abdulloh

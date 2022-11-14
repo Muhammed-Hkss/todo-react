@@ -1,20 +1,13 @@
 import React, { useState } from 'react'
 import { completedTodo, deleteTodo, editTodo, getAllTodos, getSingleTodo } from '../../config'
 import cls from './Todos.module.scss'
-
-
-import Card from '../Cards/Card'
-import { useParams } from 'react-router-dom'
 import TodoItem from '../TodoItem'
 
 
 const Todos = () => {
-  const USER_TOKEN = localStorage.getItem('userToken')
 	const [todoBase, setTodoBase] = useState(null)
 	const [monitoring, setMonitoring] = useState('')
   const [changedInput, setChangedInput] = useState('')
-  const {id} = useParams()
-// console.log(changedInput);
 
   function postUpdate(todoId){
     editTodo(todoId , changedInput).then(() => {setMonitoring(Date.now())})
@@ -28,7 +21,6 @@ const Todos = () => {
   React.useEffect(() => {
     getAllTodos().then((r) => {
       setTodoBase(r.data.todos)
-      // console.log(r.data.todos)
 		})
 	}, [monitoring])
   
@@ -65,7 +57,6 @@ const Todos = () => {
 
       <div className={cls.todosContainer}>
         {todoBase && todoBase.map((item) => {
-          // console.log(item);
           return(
            <TodoItem
               setChangedInput={setChangedInput}

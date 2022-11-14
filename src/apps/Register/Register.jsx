@@ -5,8 +5,6 @@ import { signUp } from '../../config'
 import cls from './Register.module.scss'
 
 const Register = () => {
-  const [email , setEmail] = React.useState('')
-  const [password , setPassword] = React.useState('')
   const navigate = useNavigate()
   const isActive = localStorage.getItem('isActivated')
 
@@ -31,30 +29,6 @@ const Register = () => {
       })
     }
   };
-
-
-
-
-  // const registerHandler = (e) => {
-  //   e.preventDefault()
-  //   if(email && password){
-  //     const body = {
-  //       email,
-  //       password,
-  //     }
-  //     signUp(body).then((res) => {
-  //       console.log(res);
-  //       if(res.data.user.id){
-  //         localStorage.setItem('userToken', res.data.accessToken)
-  //         localStorage.setItem('userId', res.data.user.id)
-	// 				localStorage.setItem('userEmail', res.data.user.email)
-	// 				localStorage.setItem('isActivated', res.data.user.isActivated)
-  //         // window.location.reload()
-  //         navigate('/')
-  //       }
-  //     })
-  //   }
-  // }
 
   
 
@@ -116,45 +90,6 @@ const Register = () => {
           <Link to='/login'>Already have an account?</Link>
         </div>
       </form>
-
-
-
-      {/* <form>
-				<div 
-          className={cls.formHeader}
-          >
-					<h1>Register</h1>
-				</div>
-				<div 
-          className={cls.formBody}
-          >
-					<input
-						type='email'
-						placeholder='Email'
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-            />
-					<input
-						type='password'
-						placeholder='Password'
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-            />
-            {
-              isActive === 'false' ? 
-              <div>
-                <p>На вашу почту отправлено, ссылка на активацию аккаунта</p>
-                <p style={{ color:'gray'}}>Прежде чем перейти на Главную, активируйте аккаунт</p>
-              </div> : ''
-            }
-				</div>
-				<div 
-          className={cls.formFooter}
-        >
-					<button onClick={(e) => registerHandler(e)}>Register</button>
-					<Link to='/login'>Already have an account?</Link>
-				</div>
-			</form> */}
     </div>
   )
 }

@@ -14,7 +14,3 @@ const Main = () => {
 }
 
 export default Main
-
-// testtest
-// testtest@gmail.com
-// 123123

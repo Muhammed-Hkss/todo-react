@@ -37,8 +37,6 @@ const TodoItem = ({
         /> : <p></p>
       }
     </div>
-    {/* <h3>{item.title}</h3> */}
-
 
 
 

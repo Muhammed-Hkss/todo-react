@@ -11,8 +11,6 @@ const Admin = () => {
 	const [desc, setDesc] = useState('')
 	const [date, setDate] = useState('')
 	const [validate, setValidate] = useState(true)
-  const USER_TOKEN = localStorage.getItem('userToken')
-	const USER_ID = localStorage.getItem('userId')
   const navigate = useNavigate()
   const { actions } = useAlert()
 
@@ -31,9 +29,8 @@ const Admin = () => {
         title,
 				content: desc,
 				date,
-				user: USER_ID
       }
-      createTodo(body, USER_TOKEN).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
+      createTodo(body).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
     } else {
       setValidate(false)
     }
@@ -48,7 +45,6 @@ const Admin = () => {
 			/>
     </div>
     <div className={cls.formContainer}>
-      {/* admin */}
       <form>
         <span className={cls.errorRes}>
           {!validate ? 'required fields': ''}
