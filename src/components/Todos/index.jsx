@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { completedTodo, deleteTodo, editTodo, getAllTodos} from '../../config'
 import cls from './Todos.module.scss'
 import TodoItem from '../TodoItem'
+import Loading from '../Loading'
 
 
 const Todos = () => {
@@ -15,17 +16,20 @@ const Todos = () => {
 
 
   
-  console.log(todoBase);
+  // console.log(monitoring);
   
   
   React.useEffect(() => {
     getAllTodos().then((r) => {
+      // console.log(r);
       setTodoBase(r.data.todos)
 		})
 	}, [monitoring])
   
+
+  
 	if (todoBase === null) 
-  return(<h1>loading</h1>)
+  return(<div><Loading /></div>)
   if (todoBase?.length === 0){
     return (
       <div className={cls.empty}>

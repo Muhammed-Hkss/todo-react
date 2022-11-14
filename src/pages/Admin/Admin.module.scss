@@ -9,7 +9,7 @@
 
 .formContainer{
   position: relative;
-  width: 40%;
+  width: 50%;
   margin: auto;  
   top: 10em;
   form{
@@ -75,3 +75,15 @@
 
 }
 
+
+
+@media(max-width:811px){
+
+  .formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    top: 7em;
+  }
+}
