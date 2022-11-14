@@ -59,6 +59,7 @@ const Todos = () => {
         {todoBase && todoBase.map((item) => {
           return(
            <TodoItem
+              key={item.id}
               setChangedInput={setChangedInput}
               postUpdate={postUpdate}
               deleteTodo={deleteTodo}
