@@ -4,7 +4,6 @@ import { createTodo } from '../../config'
 import cls from './Admin.module.scss'
 import {IoIosArrowBack} from "react-icons/io";
 import useAlert from '../../hooks/useAlert';
-import Loading from '../../components/Loading';
 
 
 const Admin = () => {
