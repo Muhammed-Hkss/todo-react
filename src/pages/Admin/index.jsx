@@ -11,7 +11,7 @@ const Admin = () => {
   const [title, setTitle] = useState('')
 	const [desc, setDesc] = useState('')
 	const [date, setDate] = useState('')
-	const [validate, setValidate] = useState(true)
+	// const [validate, setValidate] = useState(true)
   const navigate = useNavigate()
   const { actions } = useAlert()
   
@@ -32,7 +32,7 @@ const Admin = () => {
     
     e.preventDefault()
     if ( title  && date ) {
-      setValidate(true)
+      // setValidate(true)
       const body = {
         title,
 				content: desc,
@@ -41,7 +41,7 @@ const Admin = () => {
       console.log(body);
       createTodo(body).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
     } else {
-      setValidate(false)
+      // setValidate(false)
     }
   }
 

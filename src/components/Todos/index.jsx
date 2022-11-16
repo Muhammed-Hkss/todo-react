@@ -9,7 +9,7 @@ const Todos = () => {
 	const [todoBase, setTodoBase] = useState(null)
 	const [monitoring, setMonitoring] = useState('')
   const [changedInput, setChangedInput] = useState('')
-  const [loading , setLoading] = React.useState(false)
+  // const [loading , setLoading] = React.useState(false)
 
   function postUpdate(todoId){
     editTodo(todoId , changedInput).then(() => {setMonitoring(Date.now())})
