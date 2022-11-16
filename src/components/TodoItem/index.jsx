@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import cls from './TodoItem.module.scss'
 import { AiFillDelete } from 'react-icons/ai'
 import { FaEdit } from 'react-icons/fa'
-import { BiCheck } from 'react-icons/bi'
-
+import { BiCheck , BiX} from 'react-icons/bi'
 
 const TodoItem = ({
     setChangedInput,
@@ -14,7 +13,6 @@ const TodoItem = ({
     completedTodo,
 }) => {
     const [isDropdown, setIsDropdown] = useState(false)
-
 
   return (
     <div className={cls.todo_data} key={item.id}>
@@ -71,12 +69,23 @@ const TodoItem = ({
         <AiFillDelete  className={cls.delete_button_icons}/>
       </button>
 
-
       <button 
         className={cls.completed_button} 
-        onClick={() => {completedTodo(item.id).then(() => {setMonitoring(Date.now())})}}
+        onClick={() => 
+          {completedTodo(item.id)
+            .then(() => 
+            {setMonitoring(Date.now())}
+            
+            )
+          }
+        }
       >
-        <BiCheck className={cls.completed_button_icons}/> 
+        {
+          item.completed === true ? 
+          <BiX className={cls.completed_bix_button_icons}/> :
+          <BiCheck className={cls.completed_button_icons}/>
+        }
+
       </button>
 
       <button

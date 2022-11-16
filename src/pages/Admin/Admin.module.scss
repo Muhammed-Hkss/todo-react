@@ -52,15 +52,16 @@
         padding: 7px 50px;
         font-size: 17px;
         border-radius: 10px;
-        box-shadow: 1px 2px 5px rgb(96, 96, 102);
-        border: 1px solid rgb(107, 108, 112);
-        background: rgb(129, 131, 138);
+        box-shadow: 1px 2px 5px rgb(107, 107, 107);
+        border: 1px solid blue;
+        background: rgb(39, 74, 200);
         color: whitesmoke;
         transition: .2s;
         cursor: pointer;
         &:hover{
           background: transparent;
-          color: rgb(119, 119, 128);
+          box-shadow: 1px 2px 5px rgb(5, 84, 255);
+          color: rgb(0, 0, 0);
         }
       }
     }

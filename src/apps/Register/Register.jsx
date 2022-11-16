@@ -75,6 +75,7 @@ const Register = () => {
               minLength: 5,
               maxLength: 20,
             })}
+            
           />
           <span className={cls.password_span}>
             {errors.email?.type === "required" && "password is required"}

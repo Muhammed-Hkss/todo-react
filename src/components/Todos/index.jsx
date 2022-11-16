@@ -9,6 +9,7 @@ const Todos = () => {
 	const [todoBase, setTodoBase] = useState(null)
 	const [monitoring, setMonitoring] = useState('')
   const [changedInput, setChangedInput] = useState('')
+  const [loading , setLoading] = React.useState(false)
 
   function postUpdate(todoId){
     editTodo(todoId , changedInput).then(() => {setMonitoring(Date.now())})
@@ -21,13 +22,14 @@ const Todos = () => {
   
   React.useEffect(() => {
     getAllTodos().then((r) => {
-      // console.log(r);
       setTodoBase(r.data.todos)
 		})
 	}, [monitoring])
   
 
-  
+  // console.log(monitoring);
+
+
 	if (todoBase === null) 
   return(<div><Loading /></div>)
   if (todoBase?.length === 0){
@@ -61,8 +63,9 @@ const Todos = () => {
 
       <div className={cls.todosContainer}>
         {todoBase && todoBase.map((item) => {
+          // console.log(item.completed);          
           return(
-           <TodoItem
+            <TodoItem
               key={item.id}
               setChangedInput={setChangedInput}
               postUpdate={postUpdate}
@@ -70,7 +73,7 @@ const Todos = () => {
               setMonitoring={setMonitoring}
               completedTodo={completedTodo}
               item={item}
-           />
+            />
         )})}
       </div>
     </div>
