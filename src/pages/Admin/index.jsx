@@ -28,22 +28,22 @@ const Admin = () => {
 		setDesc('')
   }
 
-  const createTodoHandler = (e) => {
+  // const createTodoHandler = (e) => {
     
-    e.preventDefault()
-    if ( title  && date ) {
-      // setValidate(true)
-      const body = {
-        title,
-				content: desc,
-				date,
-      }
-      console.log(body);
-      createTodo(body).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
-    } else {
-      // setValidate(false)
-    }
-  }
+  //   e.preventDefault()
+  //   if ( title  && date ) {
+  //     // setValidate(true)
+  //     const body = {
+  //       title,
+	// 			content: desc,
+	// 			date,
+  //     }
+  //     console.log(body);
+  //     createTodo(body).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
+  //   } else {
+  //     // setValidate(false)
+  //   }
+  // }
 
   const onSubmit = (data) => {
     if(data){
