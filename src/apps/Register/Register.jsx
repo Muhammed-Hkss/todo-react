@@ -6,9 +6,9 @@ import cls from './Register.module.scss'
 
 const Register = () => {
   const navigate = useNavigate()
-  const isActive = localStorage.getItem('isActivated')
+  // const isActive = localStorage.getItem('isActivated')
 
-  console.log(isActive);
+  // console.log(isActive);
 
   const {
     register,
@@ -24,7 +24,7 @@ const Register = () => {
           localStorage.setItem('userToken', r.data.accessToken)
           localStorage.setItem('userId', r.data.user.id)
 					localStorage.setItem('isActivated', r.data.user.isActivated)
-          navigate('/')
+          navigate('/login')
         }
       })
     }
@@ -38,13 +38,13 @@ const Register = () => {
         <div>
           <h1 style={{textAlign:'center'}}>Registration</h1>
         </div>
-        {
+        {/* {
           isActive === 'false' ? 
           <div>
             <p>На вашу почту отправлено, ссылка на активацию аккаунта</p>
             <p style={{ color:'gray'}}>Прежде чем перейти на Главную, активируйте аккаунт</p>
           </div> : ''
-        }
+        } */}
 
        <div className={cls.input_data}>
 
