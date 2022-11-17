@@ -4,6 +4,7 @@
   width: 45%;
   margin: 30px auto;
   height: 292px;
+  border-radius: 18px;
   background: whitesmoke;
 
 
@@ -12,22 +13,53 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+
     p{
       font-size: 10px;
+      transition: all .5s ease;
     }
   }
 
-  .todo_input_data{
-    display: none;
 
+
+  .todo_input_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     &.active{
-      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: none;
+      width: 100%;
       gap: 8px;
+    }
 
-      .todo_input{
+    .todo_content_data{
+      width: 90%;
+      height: 10vh;
+      background-color: rgba(255, 254, 254, 0.9);
+      border-radius: 10px;
+      padding: 20px;
+
+      .todo_content{
+        line-height: 2;
+        height: 10vh;
+        overflow-x: hidden;
+      }
+
+
+      &.active{
+        display: none;
+      }
+    }
+
+    .todo_input{
+      display: none;
+
+      &.active{
+        display: block;
         width: 90%;
         padding: 10px;
         border-radius: 6px;
@@ -35,8 +67,13 @@
         color: #5b5b5b;
         outline: none;
       }
+    }
 
-      .change_btn{
+    .change_btn{
+      display: none;
+
+      &.active{
+        display: block;
         margin-top: 10px;
         padding: 10px;
         width: 54%;
@@ -46,9 +83,17 @@
         border: none;
         font-weight: 600;
         font-size: 14px;
+        cursor: pointer;
+  
+        &:hover{
+          background: rgb(8, 0, 255) ;
+        }
       }
     }
   }
+
+
+
 
   .button_data{
     position: relative;
@@ -62,6 +107,7 @@
       height: 50px;
       cursor: pointer;
       border: none;
+      
 
 
       .completed_button_icons{
@@ -72,8 +118,8 @@
 
       .completed_bix_button_icons{
         border-radius: 50%;
-        background-color: rgb(255, 0, 0);
-        color: rgb(255, 255, 255);
+        background-color: rgb(255, 254, 254);
+        color: rgb(101, 164, 5);
       }
     }
     
@@ -84,6 +130,8 @@
       height: 50px;
       cursor: pointer;
       border: none;
+      border-radius: 0 0 18px 0;
+
       .change_button_icons{
         color: white;
       }
@@ -95,6 +143,8 @@
       height: 50px;
       cursor: pointer;
       border: none;
+      border-radius: 0 0 0 18px;
+
       .delete_button_icons{
         color: white;
       }
@@ -110,3 +160,5 @@
     width: 90%;
   }
 }
+
+

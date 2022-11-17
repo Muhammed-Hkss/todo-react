@@ -27,31 +27,33 @@ const TodoItem = ({
             background:'springgreen' , 
             color:'white' , 
             borderRadius:'50%' , 
-            width:'50px' , 
-            height:'50px' , 
-            marginTop:'10px'
-            
+            width: '40px' , 
+            height: '40px' , 
           }} 
         /> : <p></p>
       }
     </div>
 
 
-
     <div className={`${cls.todo_input_data} ${isDropdown ? cls.active : ''}`}>
-      <span>Change title to:</span>
+      <div
+        className={`${cls.todo_content_data} ${isDropdown ? cls.active : ''}`}
+      >
+        <p className={cls.todo_content}>{item.content}</p>
+      </div>
+
       <input 
-        className={cls.todo_input}
+        className={`${cls.todo_input} ${isDropdown ? cls.active : ''}`}
         onChange={(e) => setChangedInput({ ...item, title: e.target.value })}
         defaultValue={item.title}
       />
 
       <input 
-        className={cls.todo_input}
+        className={`${cls.todo_input} ${isDropdown ? cls.active : ''}`}
         onChange={(e) => setChangedInput({ ...item, content: e.target.value })}
         defaultValue={item.content}
       />
-      <button className={cls.change_btn} onClick={() => {postUpdate(item.id)}}>Change</button>
+      <button className={`${cls.change_btn} ${isDropdown ? cls.active : ''}`} onClick={() => {postUpdate(item.id)}}>Change</button>
     </div>
 
 
