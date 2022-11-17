@@ -8,9 +8,9 @@ import { useForm } from 'react-hook-form';
  
 
 const Admin = () => {
-  const [title, setTitle] = useState('')
-	const [desc, setDesc] = useState('')
-	const [date, setDate] = useState('')
+  // const [title, setTitle] = useState('')
+	// const [desc, setDesc] = useState('')
+	// const [date, setDate] = useState('')
 	// const [validate, setValidate] = useState(true)
   const navigate = useNavigate()
   const { actions } = useAlert()
