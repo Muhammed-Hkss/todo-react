@@ -38,15 +38,29 @@
 
     .todo_content_data{
       width: 90%;
-      height: 10vh;
-      background-color: rgba(255, 254, 254, 0.9);
+      height: 13vh;
+      background-color: rgba(151, 151, 151, 0.9);
       border-radius: 10px;
-      padding: 20px;
+      padding: 10px;
 
       .todo_content{
         line-height: 2;
         height: 10vh;
         overflow-x: hidden;
+
+        
+        &::-webkit-scrollbar{
+          width: 5px;
+        }
+        
+        &::-webkit-scrollbar-track{
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb{
+          background-color: #5b5b5b; 
+          border-radius: 20px;
+        }
       }
 
 
