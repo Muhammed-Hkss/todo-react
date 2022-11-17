@@ -8,9 +8,9 @@ import { useForm } from 'react-hook-form';
  
 
 const Admin = () => {
-  // const [title, setTitle] = useState('')
-	// const [desc, setDesc] = useState('')
-	// const [date, setDate] = useState('')
+  const [title, setTitle] = useState('')
+	const [desc, setDesc] = useState('')
+	const [date, setDate] = useState('')
 	// const [validate, setValidate] = useState(true)
   const navigate = useNavigate()
   const { actions } = useAlert()
@@ -22,11 +22,11 @@ const Admin = () => {
     handleSubmit,
   } = useForm();
 
-  const resetInputValues = () => {
-    setTitle('')
-		setDate('')
-		setDesc('')
-  }
+  // const resetInputValues = () => {
+  //   setTitle('')
+	// 	setDate('')
+	// 	setDesc('')
+  // }
 
   // const createTodoHandler = (e) => {
     
@@ -47,7 +47,7 @@ const Admin = () => {
 
   const onSubmit = (data) => {
     if(data){
-      createTodo(data).then(resetInputValues) && actions.sweetAlert('успешно добавлен')
+      createTodo(data).then(data) && actions.sweetAlert('успешно добавлен')
     }
   }
   
