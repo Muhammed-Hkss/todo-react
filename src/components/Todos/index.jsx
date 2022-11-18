@@ -55,6 +55,7 @@ const Todos = () => {
       <p style={{
         color:'white' ,
         marginLeft:'20px',
+        textAlign:'center'
       }} 
       >
         Todo count:{todoBase?.length}

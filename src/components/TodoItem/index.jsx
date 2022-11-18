@@ -3,6 +3,8 @@ import cls from './TodoItem.module.scss'
 import { AiFillDelete } from 'react-icons/ai'
 import { FaEdit } from 'react-icons/fa'
 import { BiCheck , BiX} from 'react-icons/bi'
+import useComplete from '../../hooks/useComplete'
+import Loading2 from '../Loading2'
 
 const TodoItem = ({
     setChangedInput,
@@ -13,6 +15,9 @@ const TodoItem = ({
     completedTodo,
 }) => {
     const [isDropdown, setIsDropdown] = useState(false)
+    const {isLoading, changeComlete, setIsLoading} = useComplete(item.id)
+
+
 
   return (
     <div className={cls.todo_data} key={item.id}>
@@ -73,19 +78,20 @@ const TodoItem = ({
 
       <button 
         className={cls.completed_button} 
-        onClick={() => 
-          {completedTodo(item.id)
-            .then(() => 
-            {setMonitoring(Date.now())}
-            
-            )
-          }
-        }
+        onClick={() => {
+          changeComlete().finally(() => {
+            setIsLoading(false)
+            setMonitoring(Date.now())
+          })
+        }}
       >
+
+
         {
-          item.completed === true ? 
-          <BiX className={cls.completed_bix_button_icons}/> :
-          <BiCheck className={cls.completed_button_icons}/>
+          isLoading === true ? <Loading2/>
+            : item.completed === true 
+            ? <BiX className={cls.completed_bix_button_icons}/> 
+            :  <BiCheck className={cls.completed_button_icons}/>
         }
 
       </button>
